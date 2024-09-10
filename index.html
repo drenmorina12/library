@@ -30,6 +30,42 @@
         <img class="cover-photo" />
         <!-- <div class="cover-photo"></div> -->
         <button class="new-book">NEW BOOK</button>
+        <dialog class="dialog" open>
+          <form>
+            <ul>
+              <li>
+                <label for="name">Book Name:</label>
+                <input type="text" id="name" name="name" />
+              </li>
+              <li>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" />
+              </li>
+              <li>
+                <label for="pages">Number of Pages:</label>
+                <input type="number" id="pages" name="pages" />
+              </li>
+              <li class="radio"><label>Read Status:</label></li>
+
+              <li class="radio">
+                <input type="radio" id="read" name="status" value="read" />
+                <label for="read">Read</label>
+              </li>
+              <li class="radio">
+                <input
+                  type="radio"
+                  id="notRead"
+                  name="status"
+                  value="notREad"
+                />
+                <label for="notRead">Not Read</label>
+              </li>
+              <li>
+                <button class="submit-btn">Submit</button>
+              </li>
+            </ul>
+          </form>
+        </dialog>
         <div class="book-details">
           <div class="book-title"></div>
           <div class="book-author"></div>

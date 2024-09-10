@@ -125,6 +125,15 @@ body {
   border: 1px solid #706155;
 }
 
+.new-book:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.new-book:active {
+  opacity: 0.7;
+}
+
 .book-details {
   display: flex;
   flex-direction: column;
@@ -237,4 +246,39 @@ body {
 
 .book-status > * {
   padding: 3px;
+}
+
+.dialog {
+  margin: 0;
+  transform: translate(0px, 100px);
+}
+
+.dialog > form > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dialog > form > ul > li{
+  list-style: none;
+}
+
+.dialog > form > ul > li:has(input[type="text"]) {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+/* .dialog input[type="text"] {
+} */
+
+#pages {
+  width: 40px;
+  
+}
+
+.dialog .radio {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
