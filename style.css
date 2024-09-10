@@ -29,6 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  padding-left: 20px;
   gap: 2px;
 }
 
@@ -62,5 +63,36 @@ body {
 }
 
 .header {
-  /* grid-column: 1 / span 2; */
+  padding-left: 30px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.header > button,
+.pfp {
+  height: 2rem;
+  border: 1px solid #a29a90;
+  border-radius: 20px;
+  background-color: #d9c9b6;
+  padding: 0 25px;
+}
+
+.pfp {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 30px;
+  padding: 0;
+}
+
+.header > button:hover,
+.pfp:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.header .profile {
+  margin-left: auto;
+  padding: 0px 45px;
 }
