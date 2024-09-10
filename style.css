@@ -15,7 +15,7 @@ body {
 .container {
   background-color: #e1d7ca;
   height: 630px;
-  width: 1080px;
+  width: 980px;
   border-radius: 20px;
   box-shadow: 20px 15px 20px 18px rgba(0, 0, 0, 0.4);
   display: grid;
@@ -94,5 +94,45 @@ body {
 
 .header .profile {
   margin-left: auto;
-  padding: 0px 45px;
+  /* padding: 0px 35px; */
+}
+
+.side-panel {
+  padding: 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.side-panel > div {
+  flex: auto;
+  /* border: 1px solid red; */
+}
+
+.cover-photo {
+  border: 1px solid #9b8171;
+  border-radius: 20px;
+  /* width: 200px; */
+  aspect-ratio: 1/1;
+  background-color: #d8ccba;
+}
+
+.new-book {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #bda791;
+  border: 1px solid #706155;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.book-details > div {
+  flex: auto;
+  border: 1px solid #706155;
+  border-radius: 20px;
 }
