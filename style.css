@@ -196,8 +196,45 @@ body {
 .book {
   width: 180px;
   height: 200px;
+  background-color: #d4c4b0;
   border: 1px solid #8b7e74;
   border-radius: 20px;
   outline: 5px solid #e1d7ca;
   box-shadow: -4px -4px 5px 1px white, 5px 5px 5px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+  padding: 10px 15px;
+}
+
+.book > div {
+  padding: 3px;
+}
+
+.book > div:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.page-count {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-status {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.book-status :first-child,
+.book-status :nth-child(3) {
+  border-right: 1px solid black;
+}
+
+.book-status :first-child,
+.book-status :nth-child(2) {
+  border-bottom: 1px solid black;
+}
+
+.book-status > * {
+  padding: 3px;
 }
