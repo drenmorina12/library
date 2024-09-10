@@ -5,7 +5,7 @@ const submitBtn = document.querySelector(".submit-btn");
 const myLibrary = [];
 
 newBookBtn.addEventListener("click", () => {
-  dialog.show();
+  dialog.showModal();
 });
 
 submitBtn.addEventListener("click", () => {

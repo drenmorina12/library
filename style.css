@@ -249,32 +249,33 @@ body {
 }
 
 .dialog {
-  margin: 0;
-  transform: translate(0px, 100px);
+  /* margin: 0; */
+  /* transform: translate(0px, 100px); */
+  width: 250px;
 }
 
 .dialog > form > ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 0px;
 }
 
-.dialog > form > ul > li{
+.dialog > form > ul > li {
   list-style: none;
 }
 
 .dialog > form > ul > li:has(input[type="text"]) {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 170px;
 }
 
 /* .dialog input[type="text"] {
 } */
 
 #pages {
-  width: 40px;
-  
+  width: 50px;
 }
 
 .dialog .radio {
