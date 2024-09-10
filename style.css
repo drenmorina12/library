@@ -136,3 +136,29 @@ body {
   border: 1px solid #706155;
   border-radius: 20px;
 }
+
+.main {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  margin: 10px 20px 10px 30px;
+}
+
+.main > div {
+  /* border: 1px solid blue; */
+}
+
+.main-info {
+  display: grid;
+  grid-template: 4fr 2fr / 4fr 1fr;
+}
+
+.main-info > img {
+  grid-area: 1 / 2 / span 2 / span 1;
+  height: 100%;
+}
+
+.headline {
+  font-weight: bold;
+  font-size: 70px;
+  padding: 0px;
+}
