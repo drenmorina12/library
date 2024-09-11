@@ -30,7 +30,6 @@ form.addEventListener("submit", (event) => {
   addBookToLibrary(book);
   form.reset();
   dialog.close();
-  showBooks();
 });
 
 function Book(title, author, pages, read) {
@@ -40,8 +39,12 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+let bookTemplate = new Book("Robnson Kruzo", "Daniel Defo", 200, "read");
+addBookToLibrary(bookTemplate);
+
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  showBooks();
 }
 
 function showBooks() {
@@ -55,7 +58,7 @@ function showBooks() {
 
     let templateString = `
               <div class="book" data-index="${index}">
-            <div>Book Card</div>
+            <div class="book-card-title">Book Card</div>
             <div>${title}</div>
             <div>${author}</div>
             <div class="page-count">
