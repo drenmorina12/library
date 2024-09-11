@@ -283,3 +283,8 @@ body {
   flex-direction: row;
   gap: 5px;
 }
+
+.remove-book:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

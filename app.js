@@ -6,6 +6,8 @@ const bookContainer = document.querySelector(".book-container");
 
 const myLibrary = [];
 
+showBooks();
+
 newBookBtn.addEventListener("click", () => {
   dialog.showModal();
 });
@@ -42,14 +44,16 @@ function addBookToLibrary(book) {
 }
 
 function showBooks() {
-  myLibrary.forEach((book) => {
+  bookContainer.innerHTML = "";
+
+  myLibrary.forEach((book, index) => {
     let title = book.title;
     let author = book.author;
     let pages = book.pages;
     let read = book.read;
 
     let templateString = `
-              <div class="book">
+              <div class="book" data-index="${index}">
             <div>Book Card</div>
             <div>${title}</div>
             <div>${author}</div>
@@ -60,7 +64,7 @@ function showBooks() {
             <div class="book-status">
               <div>Status</div>
               <div>${read == "read" ? "Read" : "Not read"}</div>
-              <div>Remove</div>
+              <div class="remove-book">Remove</div>
               <div>Toggle</div>
             </div>
           </div>
@@ -69,3 +73,14 @@ function showBooks() {
     bookContainer.innerHTML += templateString;
   });
 }
+
+bookContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-book")) {
+    const bookDiv = event.target.closest(".book");
+    const index = bookDiv.getAttribute("data-index");
+
+    myLibrary.splice(index, 1);
+
+    showBooks();
+  }
+});
