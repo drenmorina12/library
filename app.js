@@ -3,6 +3,7 @@ const dialog = document.querySelector(".dialog");
 const submitBtn = document.querySelector(".submit-btn");
 const form = document.querySelector("#form");
 const bookContainer = document.querySelector(".book-container");
+const toggleBtn = document.querySelector(".toggle-btns");
 
 const myLibrary = [];
 
@@ -65,7 +66,7 @@ function showBooks() {
               <div>Status</div>
               <div>${read == "read" ? "Read" : "Not read"}</div>
               <div class="remove-book">Remove</div>
-              <div>Toggle</div>
+              <div class="toggle-btn">Toggle</div>
             </div>
           </div>
     `;
@@ -80,7 +81,15 @@ bookContainer.addEventListener("click", (event) => {
     const index = bookDiv.getAttribute("data-index");
 
     myLibrary.splice(index, 1);
+  } else if (event.target.classList.contains("toggle-btn")) {
+    const bookDiv = event.target.closest(".book");
+    const index = bookDiv.getAttribute("data-index");
 
-    showBooks();
+    myLibrary[index].read == "read"
+      ? (myLibrary[index].read = "notRead")
+      : (myLibrary[index].read = "read");
+  } else {
+    return;
   }
+  showBooks();
 });
