@@ -9,11 +9,16 @@ const myLibrary = [];
 
 showBooks();
 
+/*
+  Project TODO's:
+  - Make the status tooggle a switch
+  - Add a close button
+  - Make the clicked card info appear in the 3 side panel boxes
+*/
+
 newBookBtn.addEventListener("click", () => {
   dialog.showModal();
 });
-
-submitBtn.addEventListener("click", () => {});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -32,15 +37,31 @@ form.addEventListener("submit", (event) => {
   dialog.close();
 });
 
+bookContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-book")) {
+    const bookDiv = event.target.closest(".book");
+    const index = bookDiv.getAttribute("data-index");
+
+    myLibrary.splice(index, 1);
+  } else if (event.target.classList.contains("toggle-btn")) {
+    const bookDiv = event.target.closest(".book");
+    const index = bookDiv.getAttribute("data-index");
+
+    myLibrary[index].read == "read"
+      ? (myLibrary[index].read = "notRead")
+      : (myLibrary[index].read = "read");
+  } else {
+    return;
+  }
+  showBooks();
+});
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
 }
-
-let bookTemplate = new Book("Robnson Kruzo", "Daniel Defo", 200, "read");
-addBookToLibrary(bookTemplate);
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
@@ -78,21 +99,5 @@ function showBooks() {
   });
 }
 
-bookContainer.addEventListener("click", (event) => {
-  if (event.target.classList.contains("remove-book")) {
-    const bookDiv = event.target.closest(".book");
-    const index = bookDiv.getAttribute("data-index");
-
-    myLibrary.splice(index, 1);
-  } else if (event.target.classList.contains("toggle-btn")) {
-    const bookDiv = event.target.closest(".book");
-    const index = bookDiv.getAttribute("data-index");
-
-    myLibrary[index].read == "read"
-      ? (myLibrary[index].read = "notRead")
-      : (myLibrary[index].read = "read");
-  } else {
-    return;
-  }
-  showBooks();
-});
+let sampleBook = new Book("Robnson Kruzo", "Daniel Defo", 200, "read");
+addBookToLibrary(sampleBook);
