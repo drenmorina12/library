@@ -4,6 +4,7 @@ const submitBtn = document.querySelector(".submit-btn");
 const form = document.querySelector("#form");
 const bookContainer = document.querySelector(".book-container");
 const toggleBtn = document.querySelector(".toggle-btns");
+const closeBtn = document.querySelector(".close-btn");
 
 const myLibrary = [];
 
@@ -18,6 +19,10 @@ showBooks();
 
 newBookBtn.addEventListener("click", () => {
   dialog.showModal();
+});
+
+closeBtn.addEventListener("click", () => {
+  dialog.close();
 });
 
 form.addEventListener("submit", (event) => {

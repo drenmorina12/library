@@ -296,17 +296,28 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 0px;
+  padding: 1rem;
 }
 
 .dialog > form > ul > li {
   list-style: none;
+  width: 100%;
 }
 
 .dialog > form > ul > li:has(input[type="text"]) {
   display: flex;
   flex-direction: column;
-  width: 170px;
+  /* width: 170px; */
+}
+
+.number-of-pages,
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons > button {
+  padding: 5px;
 }
 
 /* .dialog input[type="text"] {
