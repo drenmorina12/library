@@ -52,20 +52,31 @@ bookContainer.addEventListener("click", (event) => {
     const bookDiv = event.target.closest(".book");
     const index = bookDiv.getAttribute("data-index");
 
-    myLibrary[index].read == "read"
-      ? (myLibrary[index].read = "notRead")
-      : (myLibrary[index].read = "read");
+    myLibrary[index].toggleStatus();
   } else {
     return;
   }
   showBooks();
 });
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+// function Book(title, author, pages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// }
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  toggleStatus() {
+    this.read === "read" ? (this.read = "notRead") : (this.read = "read");
+  }
 }
 
 function addBookToLibrary(book) {
